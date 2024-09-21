@@ -8,14 +8,14 @@ library(shinyjs)
 # Definir la interfaz de usuario
 ui <- dashboardPage(
   dashboardHeader(
-    title = "An?lisis de impacto presupuestario",
+    title = "Anñlisis de impacto presupuestario",
     titleWidth = 350),
   dashboardSidebar(
     width = 350,
     sidebarMenu(
-      menuItem("Introducci?n", tabName = "introduccion", icon = icon("info-circle")),
-      menuItem("Poblaci?n diana", tabName = "poblacion_diana", icon = icon("users")),
-      menuItem("Costes farmacol?gicos", tabName = "costes_farmacologicos", icon = icon("medkit")),
+      menuItem("Introducciñn", tabName = "introduccion", icon = icon("info-circle")),
+      menuItem("Poblaciñn diana", tabName = "poblacion_diana", icon = icon("users")),
+      menuItem("Costes farmacolñgicos", tabName = "costes_farmacologicos", icon = icon("medkit")),
       menuItem("Cuotas de mercado - Escenario actual", tabName = "cuotas_mercado_actual", icon = icon("chart-pie")),
       menuItem("Cuotas de mercado - Escenario potencial", tabName = "cuotas_mercado_potencial", icon = icon("chart-pie")),
       menuItem("Resultados", tabName = "resultados", icon = icon("table"))
@@ -35,21 +35,21 @@ ui <- dashboardPage(
     
     tabItems(
       
-      # Introducc?n
+      # Introduccñn
       tabItem(tabName = "introduccion",
               fluidRow(
                 column(12,
-                       h2("Introducci?n al An?lisis de Impacto Presupuestario"),
-                       p("Un an?lisis de impacto presupuestario es una herramienta utilizada para evaluar las implicaciones econ?micas de la introducci?n de una nueva intervenci?n de salud, como un medicamento o una tecnolog?a m?dica, en un sistema de salud."),
-                       p("Este an?lisis ayuda a los responsables de la toma de decisiones a entender c?mo los cambios en la pr?ctica cl?nica pueden afectar el presupuesto de salud a corto y largo plazo."),
-                       h3("Elementos del An?lisis de Impacto Presupuestario"),
-                       p("La aplicaci?n est? estructurada en varias secciones que corresponden a los elementos clave de un an?lisis de impacto presupuestario:"),
+                       h2("Introducciñn al Anñlisis de Impacto Presupuestario"),
+                       p("Un anñlisis de impacto presupuestario es una herramienta utilizada para evaluar las implicaciones econñmicas de la introducciñn de una nueva intervenciñn de salud, como un medicamento o una tecnologña mñdica, en un sistema de salud."),
+                       p("Este anñlisis ayuda a los responsables de la toma de decisiones a entender cñmo los cambios en la prñctica clñnica pueden afectar el presupuesto de salud a corto y largo plazo."),
+                       h3("Elementos del Anñlisis de Impacto Presupuestario"),
+                       p("La aplicaciñn estñ estructurada en varias secciones que corresponden a los elementos clave de un anñlisis de impacto presupuestario:"),
                        tags$ul(
-                         tags$li("Poblaci?n diana: Define la poblaci?n que se ver? afectada por la intervenci?n."),
-                         tags$li("Costes farmacol?gicos: Estima los costes asociados a los medicamentos."),
-                         tags$li("Cuotas de mercado - Escenario actual: Analiza la distribuci?n actual del mercado."),
-                         tags$li("Cuotas de mercado - Escenario potencial: Proyecta la distribuci?n del mercado en un escenario futuro."),
-                         tags$li("Resultados: Presenta los resultados del an?lisis, incluyendo el impacto presupuestario.")
+                         tags$li("Poblaciñn diana: Define la poblaciñn que se verñ afectada por la intervenciñn."),
+                         tags$li("Costes farmacolñgicos: Estima los costes asociados a los medicamentos."),
+                         tags$li("Cuotas de mercado - Escenario actual: Analiza la distribuciñn actual del mercado."),
+                         tags$li("Cuotas de mercado - Escenario potencial: Proyecta la distribuciñn del mercado en un escenario futuro."),
+                         tags$li("Resultados: Presenta los resultados del anñlisis, incluyendo el impacto presupuestario.")
                        )
                 )
               )
@@ -84,22 +84,22 @@ ui <- dashboardPage(
       tabItem(tabName = "cuotas_mercado_actual",
               fluidRow(
                 column(4,
-                       h3("A?o 1"),
+                       h3("Año 1"),
                        numericInput("market_share1_med1_actual", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share1_med2_actual", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market1_actual", "Calcular A?o 1")
+                       actionButton("calculate_market1_actual", "Calcular Año 1")
                 ),
                 column(4,
-                       h3("A?o 2"),
+                       h3("Año 2"),
                        numericInput("market_share2_med1_actual", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share2_med2_actual", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market2_actual", "Calcular A?o 2")
+                       actionButton("calculate_market2_actual", "Calcular Año 2")
                 ),
                 column(4,
-                       h3("A?o 3"),
+                       h3("Año 3"),
                        numericInput("market_share3_med1_actual", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share3_med2_actual", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market3_actual", "Calcular A?o 3")
+                       actionButton("calculate_market3_actual", "Calcular Año 3")
                 )
               ),
               fluidRow(
@@ -108,7 +108,7 @@ ui <- dashboardPage(
                        tableOutput("marketShareTable_actual")
                 ),
                 column(6,
-                       h4("N?mero de pacientes"),
+                       h4("Nñmero de pacientes"),
                        tableOutput("patientTable_actual")
                 )
               ),
@@ -122,22 +122,22 @@ ui <- dashboardPage(
       tabItem(tabName = "cuotas_mercado_potencial",
               fluidRow(
                 column(4,
-                       h3("A?o 1"),
+                       h3("Año 1"),
                        numericInput("market_share1_med1_potencial", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share1_med2_potencial", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market1_potencial", "Calcular A?o 1")
+                       actionButton("calculate_market1_potencial", "Calcular Año 1")
                 ),
                 column(4,
-                       h3("A?o 2"),
+                       h3("Año 2"),
                        numericInput("market_share2_med1_potencial", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share2_med2_potencial", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market2_potencial", "Calcular A?o 2")
+                       actionButton("calculate_market2_potencial", "Calcular Año 2")
                 ),
                 column(4,
-                       h3("A?o 3"),
+                       h3("Año 3"),
                        numericInput("market_share3_med1_potencial", "Cuota de mercado Medicamento 1 (%):", value = 50),
                        numericInput("market_share3_med2_potencial", "Cuota de mercado Medicamento 2 (%):", value = 50),
-                       actionButton("calculate_market3_potencial", "Calcular A?o 3")
+                       actionButton("calculate_market3_potencial", "Calcular Año 3")
                 )
               ),
               fluidRow(
@@ -146,7 +146,7 @@ ui <- dashboardPage(
                        tableOutput("marketShareTable_potencial")
                 ),
                 column(6,
-                       h4("N?mero de pacientes"),
+                       h4("Nñmero de pacientes"),
                        tableOutput("patientTable_potencial")
                 )
               ),
@@ -156,35 +156,35 @@ ui <- dashboardPage(
                 )
               )
       ),
-      # Poblaci?n diana
+      # Poblaciñn diana
       tabItem(tabName = "poblacion_diana",
               fluidRow(
                 column(4,
-                       numericInput("total_population_year1", "Poblaci?n Total A?o 1:", value = 1000),
-                       numericInput("aware_year1", "Conocimiento del Estado A?o 1 (%):", value = 80),
-                       numericInput("linked_year1", "Vinculados a Servicios A?o 1 (%):", value = 70),
-                       numericInput("retained_year1", "Retenidos en Servicios A?o 1 (%):", value = 60),
-                       numericInput("treated_year1", "En Tratamiento A?o 1 (%):", value = 50),
-                       numericInput("suppressed_year1", "Supresi?n Viral A?o 1 (%):", value = 40),
-                       actionButton("calculate_year1", "Calcular A?o 1")
+                       numericInput("total_population_year1", "Poblaciñn Total Año 1:", value = 1000),
+                       numericInput("aware_year1", "Conocimiento del Estado Año 1 (%):", value = 80),
+                       numericInput("linked_year1", "Vinculados a Servicios Año 1 (%):", value = 70),
+                       numericInput("retained_year1", "Retenidos en Servicios Año 1 (%):", value = 60),
+                       numericInput("treated_year1", "En Tratamiento Año 1 (%):", value = 50),
+                       numericInput("suppressed_year1", "Supresiñn Viral Año 1 (%):", value = 40),
+                       actionButton("calculate_year1", "Calcular Año 1")
                 ),
                 column(4,
-                       numericInput("total_population_year2", "Poblaci?n Total A?o 2:", value = 1000),
-                       numericInput("aware_year2", "Conocimiento del Estado A?o 2 (%):", value = 80),
-                       numericInput("linked_year2", "Vinculados a Servicios A?o 2 (%):", value = 70),
-                       numericInput("retained_year2", "Retenidos en Servicios A?o 2 (%):", value = 60),
-                       numericInput("treated_year2", "En Tratamiento A?o 2 (%):", value = 50),
-                       numericInput("suppressed_year2", "Supresi?n Viral A?o 2 (%):", value = 40),
-                       actionButton("calculate_year2", "Calcular A?o 2")
+                       numericInput("total_population_year2", "Poblaciñn Total Año 2:", value = 1000),
+                       numericInput("aware_year2", "Conocimiento del Estado Año 2 (%):", value = 80),
+                       numericInput("linked_year2", "Vinculados a Servicios Año 2 (%):", value = 70),
+                       numericInput("retained_year2", "Retenidos en Servicios Año 2 (%):", value = 60),
+                       numericInput("treated_year2", "En Tratamiento Año 2 (%):", value = 50),
+                       numericInput("suppressed_year2", "Supresiñn Viral Año 2 (%):", value = 40),
+                       actionButton("calculate_year2", "Calcular Año 2")
                 ),
                 column(4,
-                       numericInput("total_population_year3", "Poblaci?n Total A?o 3:", value = 1000),
-                       numericInput("aware_year3", "Conocimiento del Estado A?o 3 (%):", value = 80),
-                       numericInput("linked_year3", "Vinculados a Servicios A?o 3 (%):", value = 70),
-                       numericInput("retained_year3", "Retenidos en Servicios A?o 3 (%):", value = 60),
-                       numericInput("treated_year3", "En Tratamiento A?o 3 (%):", value = 50),
-                       numericInput("suppressed_year3", "Supresi?n Viral A?o 3 (%):", value = 40),
-                       actionButton("calculate_year3", "Calcular A?o 3")
+                       numericInput("total_population_year3", "Poblaciñn Total Año 3:", value = 1000),
+                       numericInput("aware_year3", "Conocimiento del Estado Año 3 (%):", value = 80),
+                       numericInput("linked_year3", "Vinculados a Servicios Año 3 (%):", value = 70),
+                       numericInput("retained_year3", "Retenidos en Servicios Año 3 (%):", value = 60),
+                       numericInput("treated_year3", "En Tratamiento Año 3 (%):", value = 50),
+                       numericInput("suppressed_year3", "Supresiñn Viral Año 3 (%):", value = 40),
+                       actionButton("calculate_year3", "Calcular Año 3")
                 )
               ),
               fluidRow(
@@ -198,28 +198,28 @@ ui <- dashboardPage(
                 )
               )
       ),
-      # Costes farmacol?gicos
+      # Costes farmacolñgicos
       tabItem(tabName = "costes_farmacologicos",
               fluidRow(
                 column(6,
                        h3("Medicamento 1"),
-                       numericInput("dose1", "Dosis por administraci?n:", value = 50),
-                       numericInput("admin_per_cycle1", "N?m. administraciones por ciclo:", value = 2),
-                       numericInput("cycle_duration1", "Duraci?n del ciclo (d?as):", value = 7),
-                       numericInput("treatment_duration1", "Duraci?n del tratamiento (d?as):", value = 28),
-                       numericInput("mg_per_presentation1", "Miligramos por presentaci?n:", value = 100),
-                       numericInput("price_per_presentation1", "Precio presentaci?n:", value = 20),
+                       numericInput("dose1", "Dosis por administraciñn:", value = 50),
+                       numericInput("admin_per_cycle1", "Nñm. administraciones por ciclo:", value = 2),
+                       numericInput("cycle_duration1", "Duraciñn del ciclo (dñas):", value = 7),
+                       numericInput("treatment_duration1", "Duraciñn del tratamiento (dñas):", value = 28),
+                       numericInput("mg_per_presentation1", "Miligramos por presentaciñn:", value = 100),
+                       numericInput("price_per_presentation1", "Precio presentaciñn:", value = 20),
                        actionButton("calculate_cost1", "Calcular coste"),
                        tableOutput("costTable1")
                 ),
                 column(6,
                        h3("Medicamento 2"),
-                       numericInput("dose2", "Dosis por administraci?n:", value = 50),
-                       numericInput("admin_per_cycle2", "N?m. administraciones por ciclo:", value = 2),
-                       numericInput("cycle_duration2", "Duraci?n del ciclo (d?as):", value = 7),
-                       numericInput("treatment_duration2", "Duraci?n del tratamiento (d?as):", value = 28),
-                       numericInput("mg_per_presentation2", "Miligramos por presentaci?n:", value = 100),
-                       numericInput("price_per_presentation2", "Precio presentaci?n:", value = 20),
+                       numericInput("dose2", "Dosis por administraciñn:", value = 50),
+                       numericInput("admin_per_cycle2", "Nñm. administraciones por ciclo:", value = 2),
+                       numericInput("cycle_duration2", "Duraciñn del ciclo (dñas):", value = 7),
+                       numericInput("treatment_duration2", "Duraciñn del tratamiento (dñas):", value = 28),
+                       numericInput("mg_per_presentation2", "Miligramos por presentaciñn:", value = 100),
+                       numericInput("price_per_presentation2", "Precio presentaciñn:", value = 20),
                        actionButton("calculate_cost2", "Calcular coste"),
                        tableOutput("costTable2")
                 )
@@ -228,7 +228,7 @@ ui <- dashboardPage(
     )
   )
 )
-# Definir la l?gica del servidor
+# Definir la lñgica del servidor
 server <- function(input, output) {
   
   cascade_data           <- reactiveValues(data = NULL)
@@ -308,13 +308,13 @@ server <- function(input, output) {
       budget_impact_data$Scenario <- rownames(budget_impact())
       budget_impact_data <- tidyr::gather(budget_impact_data, key = "Year", value = "Cost", -Scenario)
       
-      # Asegurarse de que los a?os sean factores para mantener el orden correcto
+      # Asegurarse de que los años sean factores para mantener el orden correcto
       budget_impact_data$Year <- factor(budget_impact_data$Year, levels = unique(budget_impact_data$Year))
       
       ggplot(budget_impact_data, aes(x = Year, y = Cost, fill = Scenario)) +
         geom_bar(stat = "identity", position = position_dodge(width = 0.8)) +
         scale_fill_manual(values = c("blue", "green", "red")) +
-        labs(title = "Impacto Presupuestario", x = "A?os", y = "Coste Total") +
+        labs(title = "Impacto Presupuestario", x = "Años", y = "Coste Total") +
         theme(plot.title = element_text(hjust = 0.5))
     }
   })
@@ -324,44 +324,44 @@ server <- function(input, output) {
   observeEvent(input$calculate_market1_actual, {
     market_share1_med1_actual <- input$market_share1_med1_actual / 100
     market_share1_med2_actual <- input$market_share1_med2_actual / 100
-    total_population_year1 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o1[1] else 0
+    total_population_year1 <- if (!is.null(cascade_data$data)) cascade_data$data$Año1[1] else 0
     
     patients_med1_year1_actual <- total_population_year1 * market_share1_med1_actual
     patients_med2_year1_actual <- total_population_year1 * market_share1_med2_actual
     
     market_data_actual$data <- data.frame(
       Medicamento = c("Medicamento 1", "Medicamento 2"),
-      `A?o 1` = c(market_share1_med1_actual * 100, market_share1_med2_actual * 100)
+      `Año 1` = c(market_share1_med1_actual * 100, market_share1_med2_actual * 100)
     )
     
     patient_data_actual$data <- data.frame(
       Medicamento = c("Medicamento 1", "Medicamento 2"),
-      `A?o 1` = c(patients_med1_year1_actual, patients_med2_year1_actual)
+      `Año 1` = c(patients_med1_year1_actual, patients_med2_year1_actual)
     )
   })
   
   observeEvent(input$calculate_market2_actual, {
     market_share2_med1_actual <- input$market_share2_med1_actual / 100
     market_share2_med2_actual <- input$market_share2_med2_actual / 100
-    total_population_year2 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o2[1] else 0
+    total_population_year2 <- if (!is.null(cascade_data$data)) cascade_data$data$Año2[1] else 0
     
     patients_med1_year2_actual <- total_population_year2 * market_share2_med1_actual
     patients_med2_year2_actual <- total_population_year2 * market_share2_med2_actual
     
-    market_data_actual$data <- cbind(market_data_actual$data, `A?o 2` = c(market_share2_med1_actual * 100, market_share2_med2_actual * 100))
-    patient_data_actual$data <- cbind(patient_data_actual$data, `A?o 2` = c(patients_med1_year2_actual, patients_med2_year2_actual))
+    market_data_actual$data <- cbind(market_data_actual$data, `Año 2` = c(market_share2_med1_actual * 100, market_share2_med2_actual * 100))
+    patient_data_actual$data <- cbind(patient_data_actual$data, `Año 2` = c(patients_med1_year2_actual, patients_med2_year2_actual))
   })
   
   observeEvent(input$calculate_market3_actual, {
     market_share3_med1_actual <- input$market_share3_med1_actual / 100
     market_share3_med2_actual <- input$market_share3_med2_actual / 100
-    total_population_year3 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o3[1] else 0
+    total_population_year3 <- if (!is.null(cascade_data$data)) cascade_data$data$Año3[1] else 0
     
     patients_med1_year3_actual <- total_population_year3 * market_share3_med1_actual
     patients_med2_year3_actual <- total_population_year3 * market_share3_med2_actual
     
-    market_data_actual$data <- cbind(market_data_actual$data, `A?o 3` = c(market_share3_med1_actual * 100, market_share3_med2_actual * 100))
-    patient_data_actual$data <- cbind(patient_data_actual$data, `A?o 3` = c(patients_med1_year3_actual, patients_med2_year3_actual))
+    market_data_actual$data <- cbind(market_data_actual$data, `Año 3` = c(market_share3_med1_actual * 100, market_share3_med2_actual * 100))
+    patient_data_actual$data <- cbind(patient_data_actual$data, `Año 3` = c(patients_med1_year3_actual, patients_med2_year3_actual))
   })
   
   output$marketShareTable_actual <- renderTable({
@@ -379,7 +379,7 @@ server <- function(input, output) {
   output$marketSharePlot_actual <- renderPlot({
     if (!is.null(market_data_actual$data)) {
       bar_data <- as.matrix(market_data_actual$data[, -1])
-      barplot(bar_data, beside = FALSE, col = c("blue", "red"), legend = rownames(bar_data), xlab = "A?os", ylab = "Cuota de mercado (%)", names.arg = colnames(bar_data))
+      barplot(bar_data, beside = FALSE, col = c("blue", "red"), legend = rownames(bar_data), xlab = "Años", ylab = "Cuota de mercado (%)", names.arg = colnames(bar_data))
     }
   })
   
@@ -388,44 +388,44 @@ server <- function(input, output) {
   observeEvent(input$calculate_market1_potencial, {
     market_share1_med1_potencial <- input$market_share1_med1_potencial / 100
     market_share1_med2_potencial <- input$market_share1_med2_potencial / 100
-    total_population_year1 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o1[1] else 0
+    total_population_year1 <- if (!is.null(cascade_data$data)) cascade_data$data$Año1[1] else 0
     
     patients_med1_year1_potencial <- total_population_year1 * market_share1_med1_potencial
     patients_med2_year1_potencial <- total_population_year1 * market_share1_med2_potencial
     
     market_data_potencial$data <- data.frame(
       Medicamento = c("Medicamento 1", "Medicamento 2"),
-      `A?o 1` = c(market_share1_med1_potencial * 100, market_share1_med2_potencial * 100)
+      `Año 1` = c(market_share1_med1_potencial * 100, market_share1_med2_potencial * 100)
     )
     
     patient_data_potencial$data <- data.frame(
       Medicamento = c("Medicamento 1", "Medicamento 2"),
-      `A?o 1` = c(patients_med1_year1_potencial, patients_med2_year1_potencial)
+      `Año 1` = c(patients_med1_year1_potencial, patients_med2_year1_potencial)
     )
   })
   
   observeEvent(input$calculate_market2_potencial, {
     market_share2_med1_potencial <- input$market_share2_med1_potencial / 100
     market_share2_med2_potencial <- input$market_share2_med2_potencial / 100
-    total_population_year2 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o2[1] else 0
+    total_population_year2 <- if (!is.null(cascade_data$data)) cascade_data$data$Año2[1] else 0
     
     patients_med1_year2_potencial <- total_population_year2 * market_share2_med1_potencial
     patients_med2_year2_potencial <- total_population_year2 * market_share2_med2_potencial
     
-    market_data_potencial$data <- cbind(market_data_potencial$data, `A?o 2` = c(market_share2_med1_potencial * 100, market_share2_med2_potencial * 100))
-    patient_data_potencial$data <- cbind(patient_data_potencial$data, `A?o 2` = c(patients_med1_year2_potencial, patients_med2_year2_potencial))
+    market_data_potencial$data <- cbind(market_data_potencial$data, `Año 2` = c(market_share2_med1_potencial * 100, market_share2_med2_potencial * 100))
+    patient_data_potencial$data <- cbind(patient_data_potencial$data, `Año 2` = c(patients_med1_year2_potencial, patients_med2_year2_potencial))
   })
   
   observeEvent(input$calculate_market3_potencial, {
     market_share3_med1_potencial <- input$market_share3_med1_potencial / 100
     market_share3_med2_potencial <- input$market_share3_med2_potencial / 100
-    total_population_year3 <- if (!is.null(cascade_data$data)) cascade_data$data$A?o3[1] else 0
+    total_population_year3 <- if (!is.null(cascade_data$data)) cascade_data$data$Año3[1] else 0
     
     patients_med1_year3_potencial <- total_population_year3 * market_share3_med1_potencial
     patients_med2_year3_potencial <- total_population_year3 * market_share3_med2_potencial
     
-    market_data_potencial$data <- cbind(market_data_potencial$data, `A?o 3` = c(market_share3_med1_potencial * 100, market_share3_med2_potencial * 100))
-    patient_data_potencial$data <- cbind(patient_data_potencial$data, `A?o 3` = c(patients_med1_year3_potencial, patients_med2_year3_potencial))
+    market_data_potencial$data <- cbind(market_data_potencial$data, `Año 3` = c(market_share3_med1_potencial * 100, market_share3_med2_potencial * 100))
+    patient_data_potencial$data <- cbind(patient_data_potencial$data, `Año 3` = c(patients_med1_year3_potencial, patients_med2_year3_potencial))
   })
   
   output$marketShareTable_potencial <- renderTable({
@@ -443,11 +443,11 @@ server <- function(input, output) {
   output$marketSharePlot_potencial <- renderPlot({
     if (!is.null(market_data_potencial$data)) {
       bar_data <- as.matrix(market_data_potencial$data[, -1])
-      barplot(bar_data, beside = FALSE, col = c("blue", "red"), legend = rownames(bar_data), xlab = "A?os", ylab = "Cuota de mercado (%)", names.arg = colnames(bar_data))
+      barplot(bar_data, beside = FALSE, col = c("blue", "red"), legend = rownames(bar_data), xlab = "Años", ylab = "Cuota de mercado (%)", names.arg = colnames(bar_data))
     }
   })
   
-  # Poblaci?n diana
+  # Poblaciñn diana
   
   observeEvent(input$calculate_year1, {
     total_population_year1 <- input$total_population_year1
@@ -458,10 +458,10 @@ server <- function(input, output) {
     suppressed_year1 <- treated_year1 * (input$suppressed_year1 / 100)
     
     cascade_data$data <- data.frame(
-      Stage = c("Supresi?n Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaci?n"),
-      A?o1 = c(suppressed_year1, treated_year1, retained_year1, linked_year1, aware_year1, total_population_year1),
-      A?o2 = if (!is.null(cascade_data$data)) cascade_data$data$A?o2 else NA,
-      A?o3 = if (!is.null(cascade_data$data)) cascade_data$data$A?o3 else NA
+      Stage = c("Supresiñn Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaciñn"),
+      Año1 = c(suppressed_year1, treated_year1, retained_year1, linked_year1, aware_year1, total_population_year1),
+      Año2 = if (!is.null(cascade_data$data)) cascade_data$data$Año2 else NA,
+      Año3 = if (!is.null(cascade_data$data)) cascade_data$data$Año3 else NA
     )
   })
   
@@ -474,10 +474,10 @@ server <- function(input, output) {
     suppressed_year2 <- treated_year2 * (input$suppressed_year2 / 100)
     
     cascade_data$data <- data.frame(
-      Stage = c("Supresi?n Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaci?n"),
-      A?o1 = if (!is.null(cascade_data$data)) cascade_data$data$A?o1 else NA,
-      A?o2 = c(suppressed_year2, treated_year2, retained_year2, linked_year2, aware_year2, total_population_year2),
-      A?o3 = if (!is.null(cascade_data$data)) cascade_data$data$A?o3 else NA
+      Stage = c("Supresiñn Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaciñn"),
+      Año1 = if (!is.null(cascade_data$data)) cascade_data$data$Año1 else NA,
+      Año2 = c(suppressed_year2, treated_year2, retained_year2, linked_year2, aware_year2, total_population_year2),
+      Año3 = if (!is.null(cascade_data$data)) cascade_data$data$Año3 else NA
     )
   })
   
@@ -490,16 +490,16 @@ server <- function(input, output) {
     suppressed_year3 <- treated_year3 * (input$suppressed_year3 / 100)
     
     cascade_data$data <- data.frame(
-      Stage = c("Supresi?n Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaci?n"),
-      A?o1 = if (!is.null(cascade_data$data)) cascade_data$data$A?o1 else NA,
-      A?o2 = if (!is.null(cascade_data$data)) cascade_data$data$A?o2 else NA,
-      A?o3 = c(suppressed_year3, treated_year3, retained_year3, linked_year3, aware_year3, total_population_year3)
+      Stage = c("Supresiñn Viral", "En Tratamiento", "Retenidos en Servicios", "Vinculados a Servicios", "Conocimiento del Estado", "Total Poblaciñn"),
+      Año1 = if (!is.null(cascade_data$data)) cascade_data$data$Año1 else NA,
+      Año2 = if (!is.null(cascade_data$data)) cascade_data$data$Año2 else NA,
+      Año3 = c(suppressed_year3, treated_year3, retained_year3, linked_year3, aware_year3, total_population_year3)
     )
   })
   
   output$cascadePlot <- renderPlot({
     if (!is.null(cascade_data$data)) {
-      barplot(cascade_data$data$A?o1, names.arg = cascade_data$data$Stage, col = "skyblue", horiz = TRUE, las = 1, main = "Cascada Poblacional A?o 1", xlab = "N?mero de Personas")
+      barplot(cascade_data$data$Año1, names.arg = cascade_data$data$Stage, col = "skyblue", horiz = TRUE, las = 1, main = "Cascada Poblacional Año 1", xlab = "Nñmero de Personas")
       abline(v = 0, col = "red", lwd = 2)  # Eje central
     }
   })
@@ -510,7 +510,7 @@ server <- function(input, output) {
     }
   })
   
-  # Costes farmacol?gicos
+  # Costes farmacolñgicos
   
   observeEvent(input$calculate_cost1, {
     dose1 <- input$dose1
@@ -528,7 +528,7 @@ server <- function(input, output) {
     
     output$costTable1 <- renderTable({
       data.frame(
-        Variable = c("Dosis por administraci?n", "N?m. administraciones por ciclo", "Duraci?n del ciclo (d?as)", "Duraci?n del tratamiento (d?as)", "Dosis total", "Miligramos por presentaci?n", "N?m. cajas necesarias por dosis", "Precio presentaci?n", "Cajas por tratamiento", "Coste tratamiento total"),
+        Variable = c("Dosis por administraciñn", "Nñm. administraciones por ciclo", "Duraciñn del ciclo (dñas)", "Duraciñn del tratamiento (dñas)", "Dosis total", "Miligramos por presentaciñn", "Nñm. cajas necesarias por dosis", "Precio presentaciñn", "Cajas por tratamiento", "Coste tratamiento total"),
         Valor = c(dose1, admin_per_cycle1, cycle_duration1, treatment_duration1, total_mg1, mg_per_presentation1, boxes_per_dose1, price_per_presentation1, total_boxes1, total_cost1)
       )
     })
@@ -550,12 +550,12 @@ server <- function(input, output) {
     
     output$costTable2 <- renderTable({
       data.frame(
-        Variable = c("Dosis por administraci?n", "N?m. administraciones por ciclo", "Duraci?n del ciclo (d?as)", "Duraci?n del tratamiento (d?as)", "Dosis total", "Miligramos por presentaci?n", "N?m. cajas necesarias por dosis", "Precio presentaci?n", "Cajas por tratamiento", "Coste tratamiento total"),
+        Variable = c("Dosis por administraciñn", "Nñm. administraciones por ciclo", "Duraciñn del ciclo (dñas)", "Duraciñn del tratamiento (dñas)", "Dosis total", "Miligramos por presentaciñn", "Nñm. cajas necesarias por dosis", "Precio presentaciñn", "Cajas por tratamiento", "Coste tratamiento total"),
         Valor = c(dose2, admin_per_cycle2, cycle_duration2, treatment_duration2, total_mg2, mg_per_presentation2, boxes_per_dose2, price_per_presentation2, total_boxes2, total_cost2)
       )
     })
   })
 }
 
-# Ejecutar la aplicaci?n
+# Ejecutar la aplicaciñn
 shinyApp(ui = ui, server = server)
