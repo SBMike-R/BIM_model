@@ -304,7 +304,7 @@ server <- function(input, output) {
   
   output$budgetImpactPlot <- renderPlot({
     if (!is.null(budget_impact())) {
-      budget_impact_data <- as.data.frame(t(budget_impact()))
+      budget_impact_data <- as.data.frame(budget_impact())
       budget_impact_data$Scenario <- rownames(budget_impact())
       budget_impact_data <- tidyr::gather(budget_impact_data, key = "Year", value = "Cost", -Scenario)
       
